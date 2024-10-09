@@ -1,5 +1,14 @@
-import 'package:anybank/anybank.dart' as anybank;
+void main(){
+  List<String> contas = <String>["", ""];
+  List<double> saldos = <double>[100, 100];
 
-void main(List<String> arguments) {
-  print('Hello world: ${anybank.calculate()}!');
+  Conta contaGabriel = Conta("Gabriel", 20000);
+  Conta contaBeatriz = Conta("Beatriz", 15000);
+}
+
+class Conta{
+  String titular;
+  double saldo;
+
+  Conta(this.titular, this.saldo);
 }
