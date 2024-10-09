@@ -9,11 +9,11 @@ void main(){
     print(conta.saldo);
   }
 
-  receber(contaGabriel, 100);
+  contaGabriel.receber(1000);
   print(contaGabriel.titular);
   print(contaGabriel.saldo);
 
-  enviar(contaGabriel, 50);
+  contaGabriel.enviar(800);
 
   print("Apos enviar");
   print(contaGabriel.titular);
@@ -21,17 +21,17 @@ void main(){
 
 }
 
-void enviar(Conta conta, double valor){
-  conta.saldo -= valor;
-}
-
-void receber(Conta conta, double valor){
-  conta.saldo += valor;
-}
-
 class Conta{
   String titular;
   double saldo;
 
   Conta(this.titular, this.saldo);
+
+  void enviar(double valor) {
+    saldo -= valor;
+  }
+
+  void receber(double valor) {
+    saldo += valor;
+  }
 }
