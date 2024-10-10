@@ -1,3 +1,5 @@
+import 'package:anybank/conta.dart';
+
 void main(){
   Conta contaGabriel = Conta("Gabriel", 200);
   Conta contaBeatriz = Conta("Beatriz", 150);
@@ -6,32 +8,18 @@ void main(){
 
   for (var conta in contas) {
     print(conta.titular);
-    print(conta.saldo);
+    print(conta._saldo);
   }
 
   contaGabriel.receber(1000);
   print(contaGabriel.titular);
-  print(contaGabriel.saldo);
+  print(contaGabriel._saldo);
 
   contaGabriel.enviar(800);
 
   print("Apos enviar");
   print(contaGabriel.titular);
-  print(contaGabriel.saldo);
+  print(contaGabriel._saldo);
 
 }
 
-class Conta{
-  String titular;
-  double saldo;
-
-  Conta(this.titular, this.saldo);
-
-  void enviar(double valor) {
-    saldo -= valor;
-  }
-
-  void receber(double valor) {
-    saldo += valor;
-  }
-}
