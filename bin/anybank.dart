@@ -3,8 +3,8 @@ import 'package:anybank/conta.dart';
 void main(){
   Conta contaGabriel = Conta("Gabriel", 200);
   Conta contaBeatriz = Conta("Beatriz", 150);
-  ContaCorrente contaGustavo = ContaCorrente("Gustavo", 400);
-  ContaPoupanca contaKaio = ContaPoupanca("Kaio", 700);
+  ContaCorrente contaGustavo = ContaCorrente("Gustavo", 4000);
+  ContaPoupanca contaKaio = ContaPoupanca("Kaio", 4000);
 
   List<Conta> contas = <Conta>[contaGabriel, contaBeatriz];
 
@@ -16,11 +16,14 @@ void main(){
   contaBeatriz.receber(200);
   contaGabriel.enviar(10);
 
-  contaGustavo.receber(100);
   contaGustavo.imprimeSaldo();
-
-  contaKaio.enviar(200);
+  contaGustavo.enviar(4300);
+  
   contaKaio.imprimeSaldo();
+  contaKaio.enviar(4300);
+  contaKaio.calculaRendimento();
+  contaKaio.imprimeSaldo();
+  
 
 }
 
