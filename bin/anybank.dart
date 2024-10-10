@@ -7,19 +7,12 @@ void main(){
   List<Conta> contas = <Conta>[contaGabriel, contaBeatriz];
 
   for (var conta in contas) {
-    print(conta.titular);
-    print(conta._saldo);
+    conta.imprimeSaldo();
   }
 
-  contaGabriel.receber(1000);
-  print(contaGabriel.titular);
-  print(contaGabriel._saldo);
-
-  contaGabriel.enviar(800);
-
-  print("Apos enviar");
-  print(contaGabriel.titular);
-  print(contaGabriel._saldo);
+  contaGabriel.receber(100);
+  contaBeatriz.receber(200);
+  contaGabriel.enviar(10);
 
 }
 
